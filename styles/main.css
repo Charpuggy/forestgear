@@ -22,11 +22,12 @@ header {
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-evenly;
 }
 .logoimage {
     padding: 1em;
     max-width: 200px;
+    margin-right: 5em;
 }
 
 nav {
@@ -38,16 +39,19 @@ nav {
 }
 
 nav a {
-    text-shadow: 0 0 3px black;
+    text-shadow: 3px black;
+    border: 2px solid orange;
+    background-color: aqua;
+    padding:10px 50px;
+    color: black;
 }
 nav ul {
     display: flex;
-    gap: 2em;
+   
     list-style-type: none;
 }
 nav a:link, nav a:visited {
     text-decoration: none;
-    color: aliceblue;
     transition: all ease 300ms;
 }
 nav a:hover, nav a:focus {
@@ -57,6 +61,7 @@ nav a:hover, nav a:focus {
 }
 .title-text {
     margin: 15vh 0 0 12vw;
+    align-self: center;
 }
 .sales-points {
     display: flex;
@@ -170,4 +175,70 @@ footer p {
     font-variant: small-caps;
     text-align: center;
     font-weight: 600;
+}
+#mobilemenu {
+    display: none;
+}
+@media screen and (max-width: 900px) {
+    #mobilemenu {
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+    header {
+        position: relative;
+        flex-wrap: wrap;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+    }
+    #nav_menu {
+        display: none;
+    }
+    .slicknav_menu {
+        background-color: transparent;
+    }
+    .slicknav_menu a {
+        text-shadow: 0 0 3px white;
+        color: black;
+    }
+    .logoimage {
+        align-self: center;
+        justify-self: flex-start;
+    }
+    .title-text {
+       padding-top: 5vh;
+       align-self: center;
+       margin: 0;
+       flex-direction: column;
+       align-items: center;
+    }
+    .allcaps {
+        letter-spacing: 5px;
+    }
+    .title-text h1 {
+        font-size: 150%;
+        letter-spacing: 5px;
+        outline: 3px solid aliceblue;
+        outline-offset: .25em;
+        flex-wrap: wrap;
+    }
+    .sales-points {
+        padding: 2vh 0;
+        justify-content: space-evenly;
+    }
+    .sales-point {
+        width: 90vw;
+        margin: 2em 1em;
+    }
+    .cta-contents {
+        padding: 3em 2em;
+        text-align: center;
+        margin: 3em;
+    }
+    .return-to-top {
+        left: 10px;
+        bottom: 10px;
+    }
 }
